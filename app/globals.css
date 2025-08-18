@@ -155,10 +155,10 @@
   * {
     @apply border-border !scroll-smooth;
   }
-  body {
+  /* body {
     @apply bg-background text-foreground;
     font-family: Arial, Helvetica, sans-serif;
-  }
+  } */
   button {
     @apply active:outline-none;
   }
