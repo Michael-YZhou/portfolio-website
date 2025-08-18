@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* enable dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* -------------------------------------------------------------------------- */
 /* Base color tokens (light mode by default) */
 /* -------------------------------------------------------------------------- */
