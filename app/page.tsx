@@ -1,3 +1,4 @@
+import Grid from "@/components/grid/Grid";
 import Hero from "@/components/hero/Hero";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { House } from "lucide-react";
@@ -10,6 +11,7 @@ export default function Home() {
           navItems={[{ name: "Home", link: "/", icon: <House /> }]}
         />
         <Hero />
+        <Grid />
       </div>
     </main>
   );
