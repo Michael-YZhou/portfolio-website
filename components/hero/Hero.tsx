@@ -2,6 +2,8 @@ import React from "react";
 import { Spotlight } from "../ui/Spotlight";
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from "../ui/TextGenerateEffect";
+import MagicButton from "../ui/MagicButton";
+import { Navigation } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -44,6 +46,14 @@ const Hero = () => {
             <p className="text-center md:tracking-wide mb-4 text-sm md:text-lg lg:text-2xl">
               Hi I&apos;m Yang, a web developer based in Melbourne.
             </p>
+
+            <a href="#about">
+              <MagicButton
+                title="Show my work"
+                icon={<Navigation />}
+                position="right"
+              />
+            </a>
           </div>
         </div>
       </div>
