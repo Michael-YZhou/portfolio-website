@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 const MagicButton = ({
   title,
@@ -8,7 +8,7 @@ const MagicButton = ({
   otherClasses,
 }: {
   title: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   position: string;
   handleClick?: () => void;
   otherClasses?: string;
