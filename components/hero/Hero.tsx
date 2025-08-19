@@ -1,6 +1,7 @@
 import React from "react";
 import { Spotlight } from "../ui/Spotlight";
 import { cn } from "@/lib/utils";
+import { TextGenerateEffect } from "../ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
@@ -34,6 +35,15 @@ const Hero = () => {
             <h2 className="uppercase tracking-widest text-xs test-center text-blue-100 max-w-80">
               Welcome to my portfolio website!
             </h2>
+
+            <TextGenerateEffect
+              className="text-center text-[40px] md:text-5xl lg:text-6xl"
+              words="Transforming Ideas into Reality"
+            />
+
+            <p className="text-center md:tracking-wide mb-4 text-sm md:text-lg lg:text-2xl">
+              Hi I&apos;m Yang, a web developer based in Melbourne.
+            </p>
           </div>
         </div>
       </div>
