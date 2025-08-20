@@ -31,6 +31,7 @@ export const BentoGridItem = ({
   img,
   imgClassName,
   spareImg,
+  techStack,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -40,6 +41,13 @@ export const BentoGridItem = ({
   img?: string;
   imgClassName?: string;
   spareImg?: string;
+  techStack?: {
+    frontend: string[];
+    backend: string[];
+    database: string[];
+    devOps: string[];
+    other: string[];
+  };
 }) => {
   return (
     <div
@@ -64,7 +72,9 @@ export const BentoGridItem = ({
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
-              fill
+              // fill
+              height={220}
+              width={220}
             />
           )}
         </div>
@@ -77,9 +87,10 @@ export const BentoGridItem = ({
             <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
-              className="object-cover object-center w-full h-full"
-              fill
+              height={220}
+              width={220}
+              className="object-cover object-center"
+              // fill
             />
           )}
         </div>
@@ -102,7 +113,64 @@ export const BentoGridItem = ({
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
             {title}
           </div>
+
+          {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
+
+          {/* Tech stack list div */}
+          {id === 3 && (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+              {/* tech stack lists */}
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                {techStack?.frontend.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+              </div>
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                {techStack?.backend.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              {/* <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                {techStack?.database.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+              </div>
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                {techStack?.other.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div> */}
+            </div>
+          )}
         </div>
       </div>
     </div>

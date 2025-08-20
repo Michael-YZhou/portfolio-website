@@ -170,6 +170,14 @@ export const companies = [
   },
 ];
 
+export const techStack = {
+  frontend: ["ReactJS", "NextJS", "TailwindCSS"],
+  backend: ["Typescript", "NodeJS", "AWS"],
+  database: ["MongoDB", "DynamoDB", "MySQL"],
+  devOps: ["Docker", "Kubernetes", "GitHub Actions"],
+  other: ["Git", "GitHub", "Figma"],
+};
+
 export const workExperience = [
   {
     id: 1,
