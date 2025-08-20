@@ -1,7 +1,14 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Lottie from "react-lottie";
 import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import { GridGlobe } from "@/components/ui/GridGlobe";
+import { useState } from "react";
+import MagicButton from "./MagicButton";
+import { Copy } from "lucide-react";
+import animationData from "@/data/confetti.json";
 
 export const BentoGrid = ({
   className,
@@ -49,6 +56,23 @@ export const BentoGridItem = ({
     other: string[];
   };
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const handleCopy = () => {
+    const text = "yang@email.com";
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+  };
+
   return (
     <div
       className={cn(
@@ -169,6 +193,30 @@ export const BentoGridItem = ({
                   </span>
                 ))}
               </div> */}
+            </div>
+          )}
+          {id === 6 && (
+            <div className="mt-5 relative">
+              {/* button border magic from tailwind css buttons  */}
+              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
+              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
+              {/* add handleCopy() for the copy the text */}
+              <div
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
+              >
+                {/* <img src="/confetti.gif" alt="confetti" /> */}
+                <Lottie options={defaultOptions} height={200} width={400} />
+              </div>
+
+              <MagicButton
+                title={copied ? "Email is Copied!" : "Copy my email address"}
+                icon={<Copy />}
+                position="left"
+                handleClick={handleCopy}
+                otherClasses="!bg-[#161A31]"
+              />
             </div>
           )}
         </div>
