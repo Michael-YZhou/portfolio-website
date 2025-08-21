@@ -1,5 +1,6 @@
 import Grid from "@/components/grid/Grid";
 import Hero from "@/components/hero/Hero";
+import RecentProjects from "@/components/recent-projects/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { House } from "lucide-react";
 
@@ -12,6 +13,7 @@ export default function Home() {
         />
         <Hero />
         <Grid />
+        <RecentProjects />
       </div>
     </main>
   );
